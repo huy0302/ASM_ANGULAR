@@ -1,0 +1,109 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <form #task="ngForm" (ngSubmit)="submitEditTask(task)">
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Chỉnh sửa công việc</h1>
+
+          <div class="input-group mb-3 mt-4">
+            
+            <select
+              class="form-select"
+              id="floatingSelect"
+              aria-label="Floating label select example"
+              ngModel name="userId" #userId="ngModel"
+            >
+         
+              <option   *ngFor="let option of users" [value]="option._id">{{option.name}} - {{option.email}}</option>
+              
+              
+            </select>
+          </div>
+         
+         
+         
+          <div class="input-group mb-3 mt-4">
+            
+            <select
+              class="form-select"
+              id="floatingSelect"
+              aria-label="Floating label select example"
+              ngModel name="projectId" #projectId="ngModel" 
+            >
+         
+              <option  selected *ngFor="let option of project" [value]="option._id">{{option.nameProject}}</option>
+              
+              
+            </select>
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Ngày bắt đầu</span
+            >
+            <input
+              type="date"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              ngModel name="timeStart" #timeStart="ngModel"
+              [(ngModel)]="taskEdit.timeStart"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Ngày kết thúc</span
+            >
+            <input
+              type="date"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              ngModel name="timeEnd" #timeEnd="ngModel"
+              [(ngModel)]="taskEdit.timeEnd"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Tên Công việc</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              ngModel name="nameTask" #nameTask="ngModel"
+              [(ngModel)]="taskEdit.nameTask"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text">Mô tả công việc</span>
+            <textarea
+              class="form-control"
+              aria-label="With textarea"
+              ngModel name="des" #des="ngModel"
+              [(ngModel)]="taskEdit.des"
+            ></textarea>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Sửa task" />
+        </div>
+      </form>
+    </main>
+    <!-- <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Poly Pro</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+</div>
+

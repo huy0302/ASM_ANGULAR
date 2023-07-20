@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+   <form #user="ngForm" (ngSubmit)="submitAddUser(user)" novalidate>
+    <main>
+      <div class="container-fluid px-4">
+        <h1 class="mt-4">Thêm Thành Viên</h1>
+
+        <div class="input-group mb-3 mt-5">
+            <span class="input-group-text" id="inputGroup-sizing-default">Tên nhân viên</span>
+            <input ngModel name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #name="ngModel">
+        </div>
+          
+        <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+            <input ngModel name="email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #email="ngModel">
+        </div>
+          
+       
+        <input type="submit" class="btn btn-primary" value="Thêm thành viên">
+      </div>
+    </main>
+   </form>
+  
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Nguyen Duc Hai",
+      "email": "drhaisctn2@gmail.com",
+      "password": "123456"
+    }
+  ]
+  
+}

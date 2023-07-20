@@ -1,0 +1,86 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <form #project="ngForm" (ngSubmit)="submitAddProject(project)" novalidate>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Thêm Dự Án</h1>
+
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Tên dự án</span
+            >
+            <input
+              ngModel
+              name="nameProject"
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              #nameProject="ngModel"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Chi phí dự án</span
+            >
+            <input
+              ngModel
+              name="moneyProject"
+              type="number"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              #moneyProject="ngModel"
+            />
+          </div>
+
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Ngày bắt đầu dự án</span
+            >
+            <input
+              ngModel
+              name="startDate"
+              type="date"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              #startDate="ngModel"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default"
+              >Ngày kết thúc dự án</span
+            >
+            <input
+              ngModel
+              name="endDate"
+              type="date"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              #endDate="ngModel"
+            />
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <div class="d-flex" *ngFor="let item of members">
+              <p class="text-danger pe-5">{{ item.userId.name }}</p>
+            </div>
+          </div>
+          <div class="input-group mb-3 mt-4 d-grid">
+            <div class=""  *ngFor="let item of listUser">
+              <p class="" (click)="addUser(item)">{{ item.name }}</p>
+            </div>
+          </div>
+
+          <input type="submit" class="btn btn-primary" value="Thêm dự án" />
+        </div>
+      </form>
+    </main>
+   
+  </div>
+</div>

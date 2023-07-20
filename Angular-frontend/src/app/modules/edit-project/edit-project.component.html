@@ -1,0 +1,60 @@
+
+
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <form #project="ngForm" (ngSubmit)="submitEditProject(project)" novalidate>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Sửa dự án</h1>
+  
+          <div class="input-group mb-3 mt-4">
+              <span  class="input-group-text" id="inputGroup-sizing-default" >Tên dự án</span>
+              <input [(ngModel)]="projectEdit.nameProject"  ngModel name="nameProject" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #nameProject="ngModel">
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default">Chi phí dự án</span>
+            <input [(ngModel)]="projectEdit.moneyProject" ngModel name="moneyProject" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #moneyProject="ngModel">
+        </div>
+            
+          <div class="input-group mb-3 mt-4">
+              <span class="input-group-text" id="inputGroup-sizing-default">Ngày bắt đầu dự án</span>
+              <input  [(ngModel)]="projectEdit.startDate" ngModel name="startDate" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #startDate ="ngModel">
+          </div>
+          <div class="input-group mb-3 mt-4">
+            <span class="input-group-text" id="inputGroup-sizing-default">Ngày kết thúc dự án</span>
+            <input  [(ngModel)]="projectEdit.endDate"ngModel name="endDate" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #endDate ="ngModel">
+        </div>
+            
+        <div class="input-group mb-3 mt-4">
+          <div class="justify-center" *ngFor="let item of members">
+            <p>{{ item.userId.name }}</p>
+          </div>
+        </div>
+        <div class="input-group mb-3 mt-4">
+          <div class="" *ngFor="let item of listUser">
+            <p (click)="addUser(item)">{{ item.name }}</p>
+          </div>
+        </div>
+          <input type="submit" class="btn btn-primary" value="Thêm dự án">
+        </div>
+      </form>
+    </main>
+    <!-- <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Poly Pro</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+</div>
+

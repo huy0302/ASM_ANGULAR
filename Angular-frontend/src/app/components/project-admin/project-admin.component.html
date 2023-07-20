@@ -1,0 +1,71 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-4">
+        <h1 class="mt-4">Chi tiết dự án</h1>
+      </div>
+      <div class="container-fluid px-4 mt-3">
+        <a routerLink="/project/add" class="btn btn-success">Thêm dự án</a>
+      </div>
+
+      <div class="container-fluid px-4 mt-3">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Tên dự án</th>
+              <th scope="col">Ngày bắt đầu dự án</th>
+              <th scope="col">Ngày kết thúc dự án</th>
+              <th scope="col">Số lượng thành viên</th>
+              <th scope="col">Số tiền dự án</th>
+              <th scope="col">Chi tiết</th>
+              <th scope="col">Chức Năng</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="project.length > 0">
+            <tr *ngFor="let u of project">
+              <th scope="row">{{ u._id }}</th>
+              <td>{{ u.nameProject }}</td>
+            
+              <td>{{ u.startDate }}</td>
+              <td>{{ u.endDate }}</td>
+              <td>{{ u.member.length }}</td>
+              <td>{{ u.moneyProject }}</td>
+              <td><a
+                [routerLink]="['/project/', u._id]"
+                class="btn btn-success"
+                >Chi tiết</a
+              ></td>
+              <td><a
+                [routerLink]="['/project/edit/', u._id]"
+                class="btn btn-warning"
+                >Sửa</a
+              ></td>
+              <th>
+                <button (click)="removeProject(u._id)" class="btn btn-danger">
+                  Remove
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <!-- <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Poly Pro</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+</div>

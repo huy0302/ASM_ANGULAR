@@ -1,0 +1,9 @@
+<div
+  class="text-center mx-auto d-flex align-items-center justify-content-center"
+  title="rating"
+>
+  <div *ngFor="let in of counter(5) ;let i = index" (click)="setStar(i + 1)" class="d-flex text-center">
+    <p *ngIf="starRating > i" style="color: rgb(255, 44, 7)" class="fa fa-star"></p>
+    <p *ngIf="starRating <= i" class="fa fa-star"></p>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div id="layoutSidenav">
+  <div id="layoutSidenav_nav">
+    <app-navbar-admin></app-navbar-admin>
+  </div>
+  <div id="layoutSidenav_content">
+    <main>
+      <div class="container-fluid px-4">
+        <h1 class="mt-4">Quản lí thành viên</h1>
+      </div>
+      <div class="container-fluid px-4 mt-3">
+        <a routerLink="/member/add" class="btn btn-success ">Thêm thành viên</a>
+      </div>
+
+      <div class="container-fluid px-4 mt-3">
+
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID </th>
+              <th scope="col">Tên thành viên</th>
+              <th scope="col">Email</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of users">
+              <th scope="row">1</th>
+              <td>{{u._id}}</td>
+              <td>{{u.name}}</td>
+              <td>{{u.email }}</td>
+              <th><button [attr.disabled]="u.email == 'admin@gmail.com' ? '' : null" (click)="removeUser(u._id)"
+                  class="btn btn-success">Remove</button></th>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+    </main>
+    <!-- <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; Poly Pro</div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            &middot;
+            <a href="#">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+  </div>
+</div>

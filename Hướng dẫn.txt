@@ -1,0 +1,19 @@
+﻿Mở terminal tại thư mục Sever-Angular
+Chạy npm install
+Chạy npm start
+
+Tiếp tục mở thêm terminal tại thư mục Angular-frontend
+Chạy npm install
+Npm start
+Truy cập localhost:4200
+
+User Admin
+user: admin@gmail.com
+pass: 121212
+
+User Huy
+user: huynguyen03022003@gmail.com
+pass: 121212
+
+link mongo compass: mongodb://angular3:angular3@165.22.255.156:27017/angular2
+
